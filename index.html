@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Badminton Tournament Scheduler</title>
+<meta name="author" content="Samrat Shivam Singh">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="eyebrow">Mixed Doubles &middot; Round Format</div>
+    <h1>Badminton Tournament Scheduler</h1>
+    <div class="tagline">Start strong. Finish stronger.</div>
+    <p>Add your player list, courts, and target matches per player — this generates the full round-by-round schedule, a referee rotation, and individual player sheets, ready to print and hand out.</p>
+  </div>
+
+  <div class="layout">
+    <aside class="panel config-panel">
+      <label>Number of Players</label>
+      <input type="number" id="playerCountInput" min="4" value="40" oninput="syncCountToList()">
+      <div class="hint">Change this any time — it adds or trims placeholder rows below. Type real names directly into the box, or paste your full list (one per line) to overwrite everything.</div>
+
+      <label style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;">
+        <span>Player Names (one per line)</span>
+        <span id="playerCountLive" class="mono" style="text-transform:none;font-weight:700;color:var(--court-green);"></span>
+      </label>
+      <textarea id="playersInput" spellcheck="false" oninput="syncListToCount()"></textarea>
+      <div class="hint"><button class="quickfill" onclick="fillSample()">Reset to placeholder names (Player 1, Player 2 ...)</button></div>
+
+      <div class="row2">
+        <div>
+          <label>Courts Available</label>
+          <input type="number" id="courtsInput" min="1" value="5">
+        </div>
+        <div>
+          <label>Matches / Player</label>
+          <input type="number" id="matchesInput" min="1" value="5">
+        </div>
+      </div>
+      <div class="row2" style="margin-top:12px;">
+        <div>
+          <label>Points to Win</label>
+          <input type="number" id="pointsCapInput" min="1" value="15">
+        </div>
+        <div>
+          <label>Time Cap (mins)</label>
+          <input type="number" id="timeCapInput" min="1" value="8">
+        </div>
+      </div>
+      <div class="hint">Used on the printed Score Cards — e.g. "First to 15, or 8 minutes, whichever comes first."</div>
+
+      <button class="btn btn-primary" onclick="handleGenerate()">Generate Schedule</button>
+      <div id="configError" class="hint" style="color:var(--terracotta);margin-top:8px;"></div>
+    </aside>
+
+    <main class="output-panel" id="outputPanel">
+      <div class="empty-state">
+        <h3>No schedule yet</h3>
+        <div>Fill in the players, courts, and matches per player on the left, then hit Generate.</div>
+      </div>
+    </main>
+  </div>
+</div>
+<footer class="app-footer">&copy; <span id="footerYear"></span> Badminton Tournament Scheduler &middot; Designed by <strong>Samrat Shivam Singh</strong></footer>
+
+<script src="app.js"></script>
+</body>
+</html>

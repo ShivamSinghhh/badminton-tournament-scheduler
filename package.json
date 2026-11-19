@@ -1,0 +1,14 @@
+{
+  "name": "badminton-tournament-scheduler",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browser tool that builds a round-by-round doubles badminton schedule, referee rotation, score cards and standings.",
+  "author": "Samrat Shivam Singh",
+  "scripts": {
+    "dev": "node scripts/server.js",
+    "start": "node scripts/server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
