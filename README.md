@@ -2,6 +2,8 @@
 
 *Start strong. Finish stronger.*
 
+**Use it online:** https://shivamsinghhh.github.io/badminton-tournament-scheduler/ (nothing to install)
+
 A browser tool for running a doubles badminton tournament in rounds. You give it a player list, the number of courts and how many matches each player should get. It produces:
 
 - a round-by-round match schedule
@@ -19,7 +21,7 @@ It runs entirely in the browser, with no packages to install, no build step and 
 
 - **Clone with git:**
   ```bash
-  git clone <https://github.com/ShivamSinghhh/badminton-tournament-scheduler.git>
+  git clone https://github.com/ShivamSinghhh/badminton-tournament-scheduler.git
   cd badminton-tournament-scheduler
   ```
 - **Or download:** on this repository's GitHub page, click the green **Code** button → **Download ZIP**, then unzip it.
